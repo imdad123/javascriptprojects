@@ -12,3 +12,5 @@ console.log(scoreInNumber);
 //"imdad"=>true
 let someNumber =33;
 console.log(String(someNumber));
+
+//use strict to run js in new version in strict mode
