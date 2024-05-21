@@ -21,3 +21,22 @@ if(true)
         two();
     }
     one()
+
+    if(true)
+        {
+            let username="imdad"
+            if(username == "imdad")
+                {
+                    console.log(username);
+                    const website ="abc.com"
+                }
+              //  console.log(website);
+            }
+           // addTwo(4) will give error due to hoisting
+    const addTwo=function(num){
+        console.log(num+1);
+    }
+    addthree(3)
+    function addthree(num){
+        console.log(num+1);
+    }
