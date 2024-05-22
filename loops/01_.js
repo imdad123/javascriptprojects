@@ -6,3 +6,16 @@
 //             console.log(i+" * "+j+" = "+i*j);
 //         }
 // }
+let index=0;
+while(index <=10)
+    {
+        console.log("The value is :",index);
+        index = index+2;
+    }
+
+let score=1;
+do{
+    console.log("Value is ",score);
+    score++;
+
+}while(score <=10)
