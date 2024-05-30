@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guess Number</title>
+</head>
+<body>
+    <div class="container">
+        <div class="info">
+            Enter Number Between 1 to 100
+            <br/>
+            you can only do 10 try
+        </div>
+        <form>
+             <label for="">Enter Number</label>
+             <input type="number" id="guessno">
+             <input type="submit" value="Guess">
+        </form>
+        <div class="result-info">
+
+           You Tried   <span id="guess"></span>
+           <span id="completed"></span>
+        </div>
+        <div class="result">
+
+        </div>
+    </div>
+    <script>
+
+        const submitform = document.querySelector('form');
+        const guessnumber = parseInt(Math.random()*100+1);
+
+        const guessresult  =document.querySelector("#guess");
+        const result = document.querySelector('.resut');
+        const completed = document.querySelector('#completed');
+        let guesscount = [];
+        let count=0;
+        submitform.addEventListener('submit',function(e){
+            e.preventDefault();
+            const guessnumberinput = parseInt(document.querySelector('#guessno'));
+             guesscount[count]=count++;
+
+             if(guesscount.length ==10)
+             {
+                completed.innerHTML = `you have completed your Guess ${guesscount.length}`;
+                document.querySelector('#guessno').setAttribute('disabled','true');
+                document.querySelector('input[type="submit"]').setAttribute('disabled','true');
+
+             }else if( guessnumberinput ==guessnumber)
+             {
+                result.innerHTML =`You Guessed the right Number`;
+             }else{
+                guessresult.innerHTML = `  ${guesscount.length} Times`;
+             }
+
+
+        });
+    </script>
+</body>
+</html>
