@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BgChanger</title>
+</head>
+<body>
+ <button id="start">Start</button>
+ <button id="stop">Stop</button>
+
+
+    <script>
+        const htmlbody =document.querySelector('body');
+        let hexCode = "0123456789ABCDEF";
+        const btnStart= document.querySelector('#start');
+        const btnStop=document.querySelector('#stop');
+      let  startChanging;
+
+function changeRandomColor()
+{
+    let color ="#";
+            for(i=0;i< 6;i++)
+            {
+
+                color += hexCode[parseInt(Math.random()*16)];
+            }
+            console.log(color);
+            htmlbody.style.backgroundColor = color;
+}
+        btnStop.addEventListener('click',function(){
+            clearInterval(startChanging);
+            console.log('changingstop');
+            startChanging=null;
+        })
+        btnStart.addEventListener('click',function(){
+            startChanging=setInterval(changeRandomColor,2000);;
+            console.log('changing');
+        });
+
+
+
+    </script>
+</body>
+</html>
